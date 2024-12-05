@@ -1,0 +1,8 @@
+form input.ng-invalid.ng-touched,
+form select.ng-invalid.ng-touched {
+  border-color: #e53e3e;
+}
+form input.ng-valid.ng-touched,
+form select.ng-valid.ng-touched {
+  border-color: #38a169;
+}
