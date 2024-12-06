@@ -1,59 +1,63 @@
-# UserWebClient
+# Aplicación de Gestión de Usuarios
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+Esta aplicación permite gestionar usuarios mediante una API REST y una interfaz web desarrollada en Angular. Incluye funcionalidades para listar y crear usuarios.
 
-## Development server
+---
 
-To start a local development server, run:
+## Requisitos Previos
 
-```bash
-ng serve
-```
+### Para la API:
+- [.NET 6 o superior](https://dotnet.microsoft.com/download)
+- [SQLite](https://www.sqlite.org/download.html) (preconfigurado en el proyecto)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Para la aplicación web:
+- [Node.js 16 o superior](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli) instalado globalmente
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación
 
-```bash
-ng generate component component-name
-```
+### 1. Clonar el repositorio
+\```bash
+git clone [<URL_DEL_REPOSITORIO>](https://github.com/DavidZeballos/IDWM_Prueba2_Web)
+\```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La API estará disponible en: `http://localhost:5056`
 
-```bash
-ng generate --help
-```
+### 2. Configurar la Aplicación Web
 
-## Building
+1. Cambia al directorio de la app web:
+   ```bash
+   cd UserWebClient
+   ```
 
-To build the project run:
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng build
-```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   ng serve
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+La aplicación estará disponible en: `http://localhost:4200`
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Uso
 
-```bash
-ng test
-```
+### Funcionalidades Principales
 
-## Running end-to-end tests
+1. **Lista de Usuarios**
+   - Accede a la lista de usuarios existentes desde la página principal.
+   - Botón en la barra de navegación: "Lista de Usuarios".
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. **Crear Usuario**
+   - Completa el formulario para añadir un nuevo usuario con los siguientes campos:
+     - Nombre (entre 3 y 20 caracteres).
+     - Correo Electrónico (formato válido).
+     - Fecha de Nacimiento (antes de la fecha actual).
+     - Género (opciones predefinidas).
+   - Botón en la barra de navegación: "Crear Usuario".
