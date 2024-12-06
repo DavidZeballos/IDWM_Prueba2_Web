@@ -19,9 +19,9 @@ Esta aplicación permite gestionar usuarios mediante una API REST y una interfaz
 ## Instalación
 
 ### 1. Clonar el repositorio
-\```bash
-git clone [<URL_DEL_REPOSITORIO>](https://github.com/DavidZeballos/IDWM_Prueba2_Web)
-\```
+```bash
+git clone https://github.com/DavidZeballos/IDWM_Prueba2_Web
+```
 
 La API estará disponible en: `http://localhost:5056`
 
