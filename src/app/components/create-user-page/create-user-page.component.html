@@ -1,78 +1,105 @@
 <div class="container mx-auto mt-10">
-  <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Crear Usuario</h1>
-
-  <!-- Mensaje de éxito o error -->
-  <div *ngIf="message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-    {{ message }}
-  </div>
-  <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-    {{ error }}
-  </div>
-
-  <!-- Formulario de creación -->
-  <form (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto">
-    <div class="mb-4">
-      <label for="name" class="block text-gray-700 font-bold mb-2">Nombre</label>
-      <input
-        id="name"
-        type="text"
-        [(ngModel)]="user.name"
-        name="name"
-        required
-        minlength="3"
-        maxlength="20"
-        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
-    </div>
-
-    <div class="mb-4">
-      <label for="email" class="block text-gray-700 font-bold mb-2">Correo Electrónico</label>
-      <input
-        id="email"
-        type="email"
-        [(ngModel)]="user.email"
-        name="email"
-        required
-        email
-        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
-    </div>
-
-    <div class="mb-4">
-      <label for="birthDate" class="block text-gray-700 font-bold mb-2">Fecha de Nacimiento</label>
-      <input
-        id="birthDate"
-        type="date"
-        [(ngModel)]="user.birthDate"
-        name="birthDate"
-        required
-        max="{{ today }}"
-        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
-    </div>
-
-    <div class="mb-4">
-      <label for="gender" class="block text-gray-700 font-bold mb-2">Género</label>
-      <select
-        id="gender"
-        [(ngModel)]="user.gender"
-        name="gender"
-        required
-        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      >
-        <option value="" disabled selected>Selecciona un género</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
-        <option value="Otro">Otro</option>
-      </select>
-    </div>
-
-    <button
-      type="submit"
-      class="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-2 px-4 rounded-md hover:shadow-lg"
-    >
+  <div class="bg-blue-200 shadow-md rounded-lg max-w-lg mx-auto">
+    <div class="bg-blue-100 text-center text-gray-800 font-bold text-3xl p-4 rounded-lg">
       Crear Usuario
-    </button>
-  </form>
+    </div>
+  </div>
+
+  <!-- Mensajes de éxito o error -->
+  <div class="max-w-lg mx-auto mt-4">
+    <div *ngIf="message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+      {{ message }}
+    </div>
+    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      {{ error }}
+    </div>
+  </div>
+
+  <!-- Contenedor del formulario -->
+  <div class="bg-blue-200 shadow-md rounded-lg p-6 max-w-lg mx-auto">
+    <form (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-md">
+      <div class="mb-4">
+        <label
+          for="name"
+          class="block text-gray-700 font-bold mb-2 bg-white px-2 py-1 rounded inline-block"
+        >
+          Nombre
+        </label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="user.name"
+          name="name"
+          required
+          minlength="3"
+          maxlength="20"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label
+          for="email"
+          class="block text-gray-700 font-bold mb-2 bg-white px-2 py-1 rounded inline-block"
+        >
+          Correo Electrónico
+        </label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label
+          for="birthDate"
+          class="block text-gray-700 font-bold mb-2 bg-white px-2 py-1 rounded inline-block"
+        >
+          Fecha de Nacimiento
+        </label>
+        <input
+          id="birthDate"
+          type="date"
+          [(ngModel)]="user.birthDate"
+          name="birthDate"
+          required
+          max="{{ today }}"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label
+          for="gender"
+          class="block text-gray-700 font-bold mb-2 bg-white px-2 py-1 rounded inline-block"
+        >
+          Género
+        </label>
+        <select
+          id="gender"
+          [(ngModel)]="user.gender"
+          name="gender"
+          required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="" disabled selected>Selecciona un género</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-2 px-4 rounded-md hover:shadow-lg"
+      >
+        Crear Usuario
+      </button>
+    </form>
+  </div>
 </div>
